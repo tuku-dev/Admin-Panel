@@ -327,16 +327,29 @@ body {
 }
 .wrapper .sidebar {
   width: 250px;
-  background-color: #262d3f;
+  background: #384a6c;
+  background: linear-gradient(180deg, #384a6c 0%, #262d3f 100%);
   color: #fff;
 }
 .wrapper .content-wrapper {
-  overflow-y: auto;
+  overflow: hidden;
   width: calc(100% - 250px);
 }
 .wrapper .content-wrapper .header {
   height: 50px;
-  background-color: #d9ecff;
+  background-color: #384a6c;
   padding: 10px;
   box-shadow: 0px 2px 10px 0px rgba(38, 45, 63, 0.5);
+  color: #fff;
+}
+.wrapper .content-wrapper .page-content {
+  height: calc(100% - 50px);
+  padding: 10px;
+  overflow: auto;
+}
+.wrapper.squeezed .sidebar {
+  width: 75px;
+}
+.wrapper.squeezed .content-wrapper {
+  width: calc(100% - 75px);
 }/*# sourceMappingURL=main.css.map */

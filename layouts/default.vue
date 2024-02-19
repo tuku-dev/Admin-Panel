@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
+      <!-- <div class="wrapper squeezed"> -->
       <div class="sidebar">
         <Sidebar />
       </div>

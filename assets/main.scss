@@ -13,17 +13,32 @@ body {
   height: 100vh;
   .sidebar {
     width: $sidebar-width;
-    background-color: $deep1;
+    background: $deep2;
+    background: $deep-gradient;
     color: $white;
   }
   .content-wrapper {
-    overflow-y: auto;
+    overflow: hidden;
     width: calc(100% - $sidebar-width);
     .header {
-      height: 50px;
-      background-color: $info3;
+      height: $header-height;
+      background-color: $deep2;
       padding: 10px;
       box-shadow: 0px 2px 10px 0px rgba($deep1, 0.5);
+      color: $white;
+    }
+    .page-content {
+      height: calc(100% - $header-height);
+      padding: 10px;
+      overflow: auto;
+    }
+  }
+  &.squeezed {
+    .sidebar {
+      width: $squeezed-sidebar-width;
+    }
+    .content-wrapper {
+      width: calc(100% - $squeezed-sidebar-width);
     }
   }
 }
