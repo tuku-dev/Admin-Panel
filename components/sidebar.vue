@@ -1,6 +1,5 @@
 <script setup>
 const sidebarState = useSidebarState();
-console.log(sidebarState.value)
 function toggleSidebar() {
   sidebarState.value = sidebarState.value ? false : true;
 }
@@ -11,7 +10,6 @@ function toggleSidebar() {
     <Logo />
     <hr class="border" />
     <SidebarLinks />
-    <p>sqz: {{ sidebarState }}</p>
     <span class="sidebar-toggler" @click="toggleSidebar">
       <IconsRightCaret />
     </span>

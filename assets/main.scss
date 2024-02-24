@@ -18,13 +18,16 @@ body {
     background: $deep-gradient;
     color: $white;
     position: relative;
-    transition: width 0.3s ease-in-out;
+    transition: width $trans;
     .logo {
       max-width: 60px;
       margin: 15px auto;
       display: block;
       fill: rgba($white, 0.5);
-      transition: max-width 0.3s ease-in-out;
+      transition: max-width $trans;
+    }
+    hr.border {
+      @include hrBorder(rgba($white, 0.15), 20px, 0px);
     }
     .sidebar-toggler {
       position: absolute;
@@ -42,12 +45,83 @@ body {
       svg {
         // fill: $deep1;
         // width: 70%;
+        @include rectangle(30px);
         transform: rotate(-180deg);
-        transition: 0.3s ease-in-out;
+        transition: transform $trans;
       }
     }
-    a {
-      color: $white;
+    .navigation {
+      list-style-type: none;
+      .nav-item {
+        .menu-text,
+        a {
+          color: $white;
+          display: flex;
+          padding: 10px 5px;
+          border-bottom: $lightBorder;
+          align-items: flex-end;
+          justify-content: flex-start;
+          gap: 5px;
+          cursor: pointer;
+          svg {
+            @include rectangle(20px);
+          }
+          .link-text {
+            transition: width $trans;
+            overflow: hidden;
+            display: inline-flex;
+            width: calc(100% - 20px);
+          }
+        }
+        &.has-sub {
+          .carat-down {
+            svg {
+              transform: rotate(90deg);
+            }
+          }
+          .link-text {
+            width: calc(100% - 40px);
+          }
+          .submenu {
+            margin-left: 15px;
+            list-style-type: none;
+            border-left: $lightBorder;
+          }
+        }
+      }
+    }
+  }
+  &.squeezed {
+    .sidebar {
+      width: $squeezed-sidebar-width;
+      .logo {
+        max-width: 30px;
+        margin: 15px auto;
+      }
+      .sidebar-toggler {
+        svg {
+          transform: rotate(0deg);
+        }
+      }
+      .navigation {
+        .nav-item {
+          a {
+            color: $white;
+            padding: 15px 10px;
+            border-bottom: $lightBorder;
+            @extend .flex-center;
+            svg {
+              @include rectangle(30px);
+            }
+            .link-text {
+              width: 0;
+            }
+          }
+        }
+      }
+    }
+    .content-wrapper {
+      width: calc(100% - $squeezed-sidebar-width);
     }
   }
   .content-wrapper {
@@ -64,23 +138,6 @@ body {
       height: calc(100% - $header-height);
       padding: 10px;
       overflow: auto;
-    }
-  }
-  &.squeezed {
-    .sidebar {
-      width: $squeezed-sidebar-width;
-      .logo {
-        max-width: 30px;
-        margin: 15px auto;
-      }
-      .sidebar-toggler {
-        svg {
-          transform: rotate(0deg);
-        }
-      }
-    }
-    .content-wrapper {
-      width: calc(100% - $squeezed-sidebar-width);
     }
   }
 }

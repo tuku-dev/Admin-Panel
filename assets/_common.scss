@@ -1,7 +1,6 @@
-hr.border {
-  @include hrBorder(20px, rgba($white, 0.15));
+a {
+  text-decoration: none;
 }
-
 .d-flex {
   display: flex;
 }

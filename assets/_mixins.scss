@@ -1,8 +1,9 @@
-@mixin hrBorder($m: 10px, $c: $white) {
-  margin-top: $m;
-  margin-bottom: $m;
+@mixin hrBorder($c: $white, $mt: 10px, $mb: $mt) {
+  margin-top: $mt;
+  margin-bottom: $mb;
   border-top: 0;
   height: 1px;
+  border: none;
   border-bottom: 1px solid $c;
 }
 
