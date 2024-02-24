@@ -1,0 +1,12 @@
+@mixin hrBorder($m: 10px, $c: $white) {
+  margin-top: $m;
+  margin-bottom: $m;
+  border-top: 0;
+  height: 1px;
+  border-bottom: 1px solid $c;
+}
+
+@mixin rectangle($w: 0, $h: $w) {
+  width: $w;
+  height: $h;
+}

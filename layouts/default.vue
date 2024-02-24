@@ -1,6 +1,9 @@
+<script setup>
+const sidebarState = useSidebarState();
+</script>
 <template>
   <div>
-    <div class="wrapper">
+    <div class="wrapper" :class="{ squeezed: sidebarState }">
       <!-- <div class="wrapper squeezed"> -->
       <div class="sidebar">
         <Sidebar />

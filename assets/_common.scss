@@ -1,0 +1,12 @@
+hr.border {
+  @include hrBorder(20px, rgba($white, 0.15));
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-center {
+  @extend .d-flex;
+  align-items: center;
+  justify-content: center;
+}
