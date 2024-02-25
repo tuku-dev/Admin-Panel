@@ -320,11 +320,11 @@ a {
   text-decoration: none;
 }
 
-.d-flex, .flex-center, .wrapper.squeezed .sidebar .navigation .nav-item a, .wrapper .sidebar .sidebar-toggler {
+.d-flex, .flex-center, .wrapper .sidebar .sidebar-toggler {
   display: flex;
 }
 
-.flex-center, .wrapper.squeezed .sidebar .navigation .nav-item a, .wrapper .sidebar .sidebar-toggler {
+.flex-center, .wrapper .sidebar .sidebar-toggler {
   align-items: center;
   justify-content: center;
 }
@@ -344,7 +344,10 @@ body {
   background: linear-gradient(180deg, #384a6c 0%, #262d3f 100%);
   color: #fff;
   position: relative;
-  transition: width 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0%);
+  flex: 0 0 250px;
+  position: relative;
 }
 .wrapper .sidebar .logo {
   max-width: 60px;
@@ -363,23 +366,21 @@ body {
 }
 .wrapper .sidebar .sidebar-toggler {
   position: absolute;
-  left: auto;
-  right: 0;
+  left: 100%;
   z-index: 999;
-  background-color: rgba(38, 45, 63, 0.5);
-  width: 28px;
-  height: 30px;
-  border-radius: 50% 0 0 50%;
+  background-color: rgba(38, 45, 63, 0.9);
+  width: 25px;
+  height: 50px;
   cursor: pointer;
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: 0px 0px 30px -2px #fff;
+  border-radius: 0 100% 100% 0/50%;
 }
 .wrapper .sidebar .sidebar-toggler svg {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  margin-left: -10px;
   transform: rotate(-180deg);
-  transition: transform 0.3s ease-in-out;
 }
 .wrapper .sidebar .navigation {
   list-style-type: none;
@@ -418,34 +419,12 @@ body {
   list-style-type: none;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
-.wrapper.squeezed .sidebar {
-  width: 75px;
-}
-.wrapper.squeezed .sidebar .logo {
-  max-width: 30px;
-  margin: 15px auto;
-}
-.wrapper.squeezed .sidebar .sidebar-toggler svg {
-  transform: rotate(0deg);
-}
-.wrapper.squeezed .sidebar .navigation .nav-item a {
-  color: #fff;
-  padding: 15px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.wrapper.squeezed .sidebar .navigation .nav-item a svg {
-  width: 30px;
-  height: 30px;
-}
-.wrapper.squeezed .sidebar .navigation .nav-item a .link-text {
-  width: 0;
-}
-.wrapper.squeezed .content-wrapper {
-  width: calc(100% - 75px);
-}
 .wrapper .content-wrapper {
   overflow: hidden;
   width: calc(100% - 250px);
+  margin-right: 0;
+  margin-left: auto;
+  transition: all 0.3s ease-in-out;
 }
 .wrapper .content-wrapper .header {
   height: 50px;
@@ -458,4 +437,16 @@ body {
   height: calc(100% - 50px);
   padding: 10px;
   overflow: auto;
+}
+.wrapper.squeezed .sidebar {
+  transform: translateX(-100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.wrapper.squeezed .sidebar .sidebar-toggler svg {
+  transform: rotate(0deg);
+}
+.wrapper.squeezed .content-wrapper {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

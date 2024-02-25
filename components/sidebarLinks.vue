@@ -1,12 +1,16 @@
 <template>
   <ul class="navigation">
     <li class="nav-item">
-      <NuxtLink to="/">
+      <NuxtLink to="/" title="Dashboard">
         <IconsDashboard /> <span class="link-text">Dashboard</span>
       </NuxtLink>
     </li>
     <li class="nav-item has-sub">
-      <span class="menu-text" @click="toggleSubmenu('categories')">
+      <span
+        class="menu-text"
+        title="Categories"
+        @click="toggleSubmenu('categories')"
+      >
         <IconsCategories />
         <span class="link-text">Categories</span>
         <span class="carat-down">
@@ -15,12 +19,12 @@
       </span>
       <ul class="submenu" v-if="isSubmenuOpen('categories')">
         <li class="nav-item">
-          <NuxtLink to="/categories/add">
+          <NuxtLink to="/categories/add" title="Add Categories">
             <IconsPlus /> <span class="link-text">Add Category</span>
           </NuxtLink>
         </li>
         <li class="nav-item">
-          <NuxtLink to="/categories/view">
+          <NuxtLink to="/categories/view" title="ViewCategories">
             <IconsList /> <span class="link-text">View categories</span>
           </NuxtLink>
         </li>

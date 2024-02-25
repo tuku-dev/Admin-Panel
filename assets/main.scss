@@ -18,7 +18,10 @@ body {
     background: $deep-gradient;
     color: $white;
     position: relative;
-    transition: width $trans;
+    transition: transform $trans;
+    transform: translateX(0%);
+    flex: 0 0 $sidebar-width;
+    position: relative;
     .logo {
       max-width: 60px;
       margin: 15px auto;
@@ -31,23 +34,21 @@ body {
     }
     .sidebar-toggler {
       position: absolute;
-      left: auto;
-      right: 0;
+      left: 100%;
       z-index: 999;
-      background-color: rgba($deep1, 0.5);
-      @include rectangle(28px, 30px);
-      border-radius: 50% 0 0 50%;
+      background-color: rgba($deep1, 0.9);
+      @include rectangle(25px, 50px);
       cursor: pointer;
       top: 50%;
       transform: translateY(-50%);
       @extend .flex-center;
-      box-shadow: 0px 0px 30px -2px $white;
+      border-radius: 0 100% 100% 0 / 50%;
       svg {
         // fill: $deep1;
         // width: 70%;
-        @include rectangle(30px);
+        @include rectangle(40px);
+        margin-left: -10px;
         transform: rotate(-180deg);
-        transition: transform $trans;
       }
     }
     .navigation {
@@ -91,42 +92,12 @@ body {
       }
     }
   }
-  &.squeezed {
-    .sidebar {
-      width: $squeezed-sidebar-width;
-      .logo {
-        max-width: 30px;
-        margin: 15px auto;
-      }
-      .sidebar-toggler {
-        svg {
-          transform: rotate(0deg);
-        }
-      }
-      .navigation {
-        .nav-item {
-          a {
-            color: $white;
-            padding: 15px 10px;
-            border-bottom: $lightBorder;
-            @extend .flex-center;
-            svg {
-              @include rectangle(30px);
-            }
-            .link-text {
-              width: 0;
-            }
-          }
-        }
-      }
-    }
-    .content-wrapper {
-      width: calc(100% - $squeezed-sidebar-width);
-    }
-  }
   .content-wrapper {
     overflow: hidden;
     width: calc(100% - $sidebar-width);
+    margin-right: 0;
+    margin-left: auto;
+    transition: all $trans;
     .header {
       height: $header-height;
       background-color: $deep2;
@@ -138,6 +109,22 @@ body {
       height: calc(100% - $header-height);
       padding: 10px;
       overflow: auto;
+    }
+  }
+  &.squeezed {
+    .sidebar {
+      transform: translateX(-100%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      .sidebar-toggler {
+        svg {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    .content-wrapper {
+      width: 100%;
     }
   }
 }
