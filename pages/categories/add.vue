@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Add categories</h1>
+    <h1 class="text-3xl font-bold underline">Add categories</h1>
   </div>
 </template>

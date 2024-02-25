@@ -1,11 +1,3 @@
 a {
   text-decoration: none;
 }
-.d-flex {
-  display: flex;
-}
-.flex-center {
-  @extend .d-flex;
-  align-items: center;
-  justify-content: center;
-}

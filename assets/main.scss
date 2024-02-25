@@ -10,17 +10,11 @@ body {
 }
 
 .wrapper {
-  display: flex;
   height: 100vh;
   .sidebar {
     width: $sidebar-width;
-    background: $deep2;
-    background: $deep-gradient;
-    color: $white;
-    position: relative;
     transition: transform $trans;
     transform: translateX(0%);
-    flex: 0 0 $sidebar-width;
     position: relative;
     .logo {
       max-width: 60px;
@@ -35,17 +29,12 @@ body {
     .sidebar-toggler {
       position: absolute;
       left: 100%;
-      z-index: 999;
-      background-color: rgba($deep1, 0.9);
       @include rectangle(25px, 50px);
       cursor: pointer;
       top: 50%;
       transform: translateY(-50%);
-      @extend .flex-center;
       border-radius: 0 100% 100% 0 / 50%;
       svg {
-        // fill: $deep1;
-        // width: 70%;
         @include rectangle(40px);
         margin-left: -10px;
         transform: rotate(-180deg);
@@ -56,11 +45,11 @@ body {
       .nav-item {
         .menu-text,
         a {
-          color: $white;
+          // color: $white;
           display: flex;
           padding: 10px 5px;
           border-bottom: $lightBorder;
-          align-items: flex-end;
+          align-items: flex-start;
           justify-content: flex-start;
           gap: 5px;
           cursor: pointer;
@@ -128,3 +117,7 @@ body {
     }
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

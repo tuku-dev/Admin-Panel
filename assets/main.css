@@ -320,33 +320,18 @@ a {
   text-decoration: none;
 }
 
-.d-flex, .flex-center, .wrapper .sidebar .sidebar-toggler {
-  display: flex;
-}
-
-.flex-center, .wrapper .sidebar .sidebar-toggler {
-  align-items: center;
-  justify-content: center;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   color: #1f2129;
 }
 
 .wrapper {
-  display: flex;
   height: 100vh;
 }
 .wrapper .sidebar {
   width: 250px;
-  background: #384a6c;
-  background: linear-gradient(180deg, #384a6c 0%, #262d3f 100%);
-  color: #fff;
-  position: relative;
   transition: transform 0.3s ease-in-out;
   transform: translateX(0%);
-  flex: 0 0 250px;
   position: relative;
 }
 .wrapper .sidebar .logo {
@@ -367,8 +352,6 @@ body {
 .wrapper .sidebar .sidebar-toggler {
   position: absolute;
   left: 100%;
-  z-index: 999;
-  background-color: rgba(38, 45, 63, 0.9);
   width: 25px;
   height: 50px;
   cursor: pointer;
@@ -387,11 +370,10 @@ body {
 }
 .wrapper .sidebar .navigation .nav-item .menu-text,
 .wrapper .sidebar .navigation .nav-item a {
-  color: #fff;
   display: flex;
   padding: 10px 5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 5px;
   cursor: pointer;
@@ -449,4 +431,8 @@ body {
 }
 .wrapper.squeezed .content-wrapper {
   width: 100%;
-}/*# sourceMappingURL=main.css.map */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;/*# sourceMappingURL=main.css.map */

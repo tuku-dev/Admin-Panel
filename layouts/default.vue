@@ -3,9 +3,9 @@ const sidebarState = useSidebarState();
 </script>
 <template>
   <div>
-    <div class="wrapper" :class="{ squeezed: sidebarState }">
+    <div class="wrapper flex" :class="{ squeezed: sidebarState }">
       <!-- <div class="wrapper squeezed"> -->
-      <div class="sidebar">
+      <div class="sidebar bg-cyan-950 hover:bg-cyan-900 text-white">
         <Sidebar />
       </div>
       <div class="content-wrapper">
