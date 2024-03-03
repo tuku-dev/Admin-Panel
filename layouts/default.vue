@@ -5,7 +5,7 @@ const sidebarState = useSidebarState();
   <div>
     <div class="wrapper flex" :class="{ squeezed: sidebarState }">
       <!-- <div class="wrapper squeezed"> -->
-      <div class="sidebar bg-cyan-950 hover:bg-cyan-900 text-white">
+      <div class="sidebar text-white">
         <Sidebar />
       </div>
       <div class="content-wrapper">

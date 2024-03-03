@@ -11,7 +11,7 @@ function toggleSidebar() {
     <hr class="border" />
     <SidebarLinks />
     <span
-      class="sidebar-toggler bg-cyan-950 hover:bg-cyan-900 flex items-center justify-center"
+      class="sidebar-toggler flex items-center justify-center"
       @click="toggleSidebar"
     >
       <IconsRightCaret />

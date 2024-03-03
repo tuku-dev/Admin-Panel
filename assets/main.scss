@@ -16,6 +16,8 @@ body {
     transition: transform $trans;
     transform: translateX(0%);
     position: relative;
+    // background-color: $deep1;
+    @include linear-gradient(to bottom, $deep2, $dark2);
     .logo {
       max-width: 60px;
       margin: 15px auto;
@@ -34,6 +36,7 @@ body {
       top: 50%;
       transform: translateY(-50%);
       border-radius: 0 100% 100% 0 / 50%;
+      @include linear-gradient(to bottom, $deep2, $dark2);
       svg {
         @include rectangle(40px);
         margin-left: -10px;
@@ -53,6 +56,7 @@ body {
           justify-content: flex-start;
           gap: 5px;
           cursor: pointer;
+          transition: all $trans;
           svg {
             @include rectangle(20px);
           }
@@ -61,6 +65,10 @@ body {
             overflow: hidden;
             display: inline-flex;
             width: calc(100% - 20px);
+          }
+          &:hover {
+            color: $deep2;
+            background-color: $white;
           }
         }
         &.has-sub {
@@ -89,15 +97,16 @@ body {
     transition: all $trans;
     .header {
       height: $header-height;
-      background-color: $deep2;
-      padding: 10px;
       box-shadow: 0px 2px 10px 0px rgba($deep1, 0.5);
-      color: $white;
+      color: $brown1;
+      background-color: $orange1;
     }
     .page-content {
       height: calc(100% - $header-height);
       padding: 10px;
       overflow: auto;
+      position: relative;
+      z-index: 1;
     }
   }
   &.squeezed {
@@ -114,6 +123,57 @@ body {
     }
     .content-wrapper {
       width: 100%;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 3;
+  font-size: 14px;
+  .header-inner {
+    .user-controls {
+      line-height: 1;
+      transition: all $trans;
+      svg {
+        @include rectangle(25px);
+      }
+      &:hover {
+        background-color: $deep2;
+        color: $white;
+      }
+    }
+    .user-links {
+      line-height: 1.5;
+      top: 100%;
+      @include linear-gradient(to bottom, $orange1, $danger1);
+      z-index: 999;
+      min-width: $sidebar-width;
+      right: 0;
+      border-radius: 0 0 0 10px;
+      box-shadow: 0px 10px 10px -10px rgba($deep1, 0.5);
+      overflow: hidden;
+      transform: scale(0);
+      opacity: 0;
+      transition: opacity $trans;
+      .link-item {
+        &:not(:last-child) {
+          a {
+            border-bottom: $lightBorder;
+          }
+        }
+        a {
+          transition: all $trans;
+          &:hover {
+            background-color: $deep2;
+            color: $white;
+          }
+        }
+      }
+      &.open {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   }
 }
